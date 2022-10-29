@@ -1,0 +1,13 @@
+image: gitpod/workspace-java-17
+
+vscode:
+  extensions:
+    - Pivotal.vscode-boot-dev-pack
+    - vscjava.vscode-java-pack
+
+tasks:
+- init: mvn dependency:go-offline package -DskipTests
+
+# exposed ports
+ports:
+- port: 8080
