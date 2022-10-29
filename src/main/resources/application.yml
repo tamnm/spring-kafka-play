@@ -1,0 +1,12 @@
+spring:
+  kafka:
+    listener:
+      ack-mode: manual
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+      enable-auto-commit: false
+    bootstrap-servers: 127.0.0.1:9092
