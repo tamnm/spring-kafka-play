@@ -1,5 +1,6 @@
 # spring-kafka-play
 This is a playground for learning kafka in Spring boot
+[Open in gitpod](gitpod.io/#https://github.com/tamnm/spring-kafka-play)
 
 ## Setup Kafka using helm
 
