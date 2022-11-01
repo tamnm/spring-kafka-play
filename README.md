@@ -41,7 +41,7 @@ sudo apt-get install -y maven
 </details>
 <br/>
 
-## Install hey
+## 4. Install hey
 
 [Hey](https://github.com/rakyll/hey) is the tool for the load testing, similar to the ab tool of Apache.
 
