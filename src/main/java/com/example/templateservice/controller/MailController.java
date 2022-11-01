@@ -1,6 +1,8 @@
 package com.example.templateservice.controller;
 
+import com.example.templateservice.mail.Job;
 import com.example.templateservice.mail.MineMessage;
+
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,5 +21,10 @@ public class MailController {
     @PostMapping
     public void sendDummyMail(@RequestBody MineMessage msg) {
         template.send("mail", msg);
+    }
+
+    @PostMapping("job")
+    public void sendJob(@RequestBody Job job) {
+        template.send("job", job);
     }
 }
