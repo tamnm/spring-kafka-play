@@ -6,8 +6,8 @@ vscode:
     - vscjava.vscode-java-pack
 
 tasks:
-- init: mvn dependency:go-offline package -DskipTests
-
-# exposed ports
-ports:
-- port: 8080
+- init: |
+    apt-get install -y hey
+    apt-get install -y openjdk-11-jre
+    
+    mvn dependency:go-offline package -DskipTests

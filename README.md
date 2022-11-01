@@ -1,28 +1,36 @@
 # spring-kafka-play
 This is a playground for learning kafka in Spring boot
-[Open in gitpod](gitpod.io/#https://github.com/tamnm/spring-kafka-play)
+[Open in gitpod](https://gitpod.io/#https://github.com/tamnm/spring-kafka-play)
 
-## Setup Kafka using helm
+## add hosts for kafka
+```
+#file: /etc/hosts
 
-Setup kafka by follow the instruction here 👉https://bitnami.com/stack/kafka/helm
+127.0.0.1 kafka
+```
 
-## Port-forwarding the borker
-
+## Install java
 ```bash
-$kubectl port-forward service/my-release-kafka 9092
+sudo apt-get install -y openjdk-11-jre
 ```
 
-## Edit the hosts file 
-
-```hosts
-127.0.0.1 my-release-kafka-0.my-release-kafka-headless.default.svc.cluster.local
-```
-
-## Setup the Kafka UI
-
+## Install maven
 ```bash
-helm repo add kafka-ui https://provectus.github.io/kafka-ui
-helm install kafka-ui kafka-ui/kafka-ui --set envs.config.KAFKA_CLUSTERS_0_NAME=local --set envs.config.KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=my-release-kafka:9092
+sudo apt-get install -y maven
 ```
 
-Details: https://github.com/provectus/kafka-ui/tree/master/charts/kafka-ui
+## Run the kafka
+```bash
+docker-compose up -d
+```
+
+## run the service
+```bash
+mvn spring-boot:run
+```
+
+## Simulate the job
+```
+# simulate a 10s duration job
+curl -H "Content-Type: application/json" -d '{"duration":10}' http://localhost:8080/mail/job
+```
