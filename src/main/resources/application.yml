@@ -9,4 +9,4 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
       enable-auto-commit: false
-    bootstrap-servers: 127.0.0.1:9092
+    bootstrap-servers: 127.0.0.1:29092
