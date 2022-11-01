@@ -28,6 +28,11 @@ public class KafkaConfig {
     }
 
     @Bean
+    public NewTopic mail() {
+        return new NewTopic("mail", 1, (short) 1);
+    }
+    
+    @Bean
     public NewTopic dlt() {
         return new NewTopic("mail.DLT", 1, (short) 1);
     }
