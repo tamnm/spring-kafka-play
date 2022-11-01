@@ -2,34 +2,59 @@
 This is a playground for learning kafka in Spring boot
 [Open in gitpod](https://gitpod.io/#https://github.com/tamnm/spring-kafka-play)
 
-## add hosts for kafka
+## 1. add hosts for kafka
 
 The gitpod will do this step automatically.
-if the `127.0.0.1 kafka` does not exist in the hosts then we need to add manually
+<details>
+<summary>Add hosts manually</summary>
 
+```bash
+echo "127.0.0.1 kafka" | sudo tee -a /etc/hosts
 ```
-#file: /etc/hosts
+</details>
+<br/>
 
-127.0.0.1 kafka
-```
+## 2. Install java
 
-## Install java
+The gitpod will do this step automatically. 
 
-The gitpod will do this step automatically.
-if `java` does not exist in the hosts then we need to add manually
+<details>
+<summary>Install the java manual</summary>
 
 ```bash
 sudo apt-get install -y openjdk-11-jre
 ```
+</details>
+<br/>
 
-## Install maven
 
-The gitpod will do this step automatically.
-if `mvn` does not exist in the hosts then we need to add manually
+## 3. Install maven
+
+The gitpod bwill do this step 
+automatically. 
+<details>
+<summary>Install the Maven manual</summary>
 
 ```bash
 sudo apt-get install -y maven
 ```
+</details>
+<br/>
+
+## Install hey
+
+[Hey](https://github.com/rakyll/hey) is the tool for the load testing, similar to the ab tool of Apache.
+
+The gitpod will do this step automatically. 
+
+<details>
+<summary>Install Hey manually</summary>
+
+```bash
+sudo apt-get install -y hey
+```
+</details>
+<br/>
 
 ## Run the kafka
 
