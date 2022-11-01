@@ -10,4 +10,4 @@ tasks:
     apt-get install -y hey
     apt-get install -y openjdk-11-jre  
     mvn dependency:go-offline package -DskipTests
-    cat "127.0.0.1 kafka" > /etc/hosts
+    echo "127.0.0.1 kafka" | sudo tee -a /etc/hosts
